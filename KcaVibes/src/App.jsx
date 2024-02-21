@@ -9,13 +9,14 @@ import AroundYou from './pages/AroundYou'
 import ArtistDetails from './pages/ArtistDetails';
 import SongDetails from './pages/SongDetails';
 import Search from './pages/Search';
+import { useSelector } from 'react-redux';
 
 const App = () => {
+	const activeSong = useSelector((state) => state.player.activeSong);
 	return (
 		<div className="relative flex">
 			<Sidebar/>
 			<div className="flex-1 flex flex-col bg-gradient-to-br from-black to-[#121286]">
-				yoo
 				<Searchbar />
 				<div className="px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex flex-col-reverse xl:flex-row">
 					<div className="flex-1 h-fit pb-40">
@@ -34,6 +35,12 @@ const App = () => {
 					</div>
 				</div>
 			</div>
+			{activeSong?.title && (
+				<div className="absolute h-28 bottom-0 left-0 right-0 flex 
+					bg-gradient-to-br from-white/10 to-[#2a2a80] backdrop-blur-lg rounded-t-3xl z-10">
+					MusicPlayerComponent
+				</div>
+			)}
 		</div>
 	)
 }
