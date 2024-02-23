@@ -8,6 +8,14 @@ const Track = ({isSongPlaying, isSongActive}) => {
             <div className={`${isSongPlaying && isSongActive ? 'animate-[spin_3s_linear_infinite]' : ''} hidden sm:block h-16 w-16 mr-4`}>
                 <img alt="cover art" src={activeSong?.track?.album?.images[0].url} className="rounded-full"/>
             </div>
+            <div className="w-[50%]">
+                <p className="truncate text-white font-bold text-lg">
+                    {activeSong?.track?.album?.name ? activeSong.track.album.name : 'No active song'}
+                </p>
+                <p className="truncate text-gray-300">
+                    {activeSong?.track?.name ? activeSong.track.name : 'No active song'}
+                </p>
+            </div>
         </div>
     )
 }
