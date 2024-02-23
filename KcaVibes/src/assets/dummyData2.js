@@ -974,7 +974,7 @@ const jsonObject = {
       }
     }
   ],
-  "limit": 10,
+  "limit": 4,
   "next": true,
   "offset": 0,
   "previous": null,

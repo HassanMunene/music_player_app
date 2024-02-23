@@ -9,20 +9,18 @@ const initialState = {
     genreListId: '',
 };
 
+//activeSong is the song that is the object in the items. basically the whole thing
+//currentSongs are the songs that i have retrieved in my case they are the array items
+//currentIndex, items are array therefore the songs inside are indexed. Hence what index im I in
+
 const playerSlice = createSlice({
     name: 'player',
     initialState,
     reducers: {
         setActiveSong: (state, action) => {
-            state.activeSong = action.payload.song
-            if(action.payload?.data?.tracks?.hits) {
-                state.currentSongs = action.payload.data.tracks.hits;
-            } else if(action.payload?.data?.properties) {
-                state.currentSongs = action.payload.data.tracks;
-            } else {
-                state.currentSongs = action.payload.data;
-            }
-            state.currentIndex = action.payload.i;
+            state.activeSong = action.payload.song;
+            state.currentSongs = action.payload.data.items;
+            state.currentIndex = action.payload.index;
             state.isSongActive = true;
         },
         nextSong: (state, action) => {

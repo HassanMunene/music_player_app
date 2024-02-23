@@ -1,3 +1,5 @@
+import {useDispatch, useSelector} from 'react-redux';
+
 import Loader from '../components/Loader';
 import Error from '../components/Error';
 import dummyData from '../assets/dummyData2.js';
@@ -8,7 +10,10 @@ import SongCard from '../components/SongCard';
 import { useGetTopHitsInKenyaQuery } from '../redux/spotifyApi';
 
 const Discover = () => {
-	const playListId = '37i9dQZF1DWWWXigQZAD8B'
+	const dispatch = useDispatch()
+	const {activeSong, isSongPlaying} = useSelector((state) => state.player);
+
+ 	const playListId = '37i9dQZF1DWWWXigQZAD8B'
 	//const { topHitsData, isFetching, error } = useGetTopHitsInKenyaQuery(playListId);
 	//console.log(data);
 	const genreTitle = 'Pop';
@@ -31,8 +36,15 @@ const Discover = () => {
 				</select>
 			</div>
 			<div className="flex gap-8 sm:justify-start flex-wrap">
-				{data?.map((song) => (
-					<SongCard key={song.track.id} song={song} />
+				{data?.map((song, index) => (
+					<SongCard 
+						key={song.track.id} 
+						song={song} 
+						isSongPlaying={isSongPlaying} 
+						activeSong={activeSong}
+						data={dummyData} 
+						index={index}
+					/>
 				))}
 			</div>
 		</div>
