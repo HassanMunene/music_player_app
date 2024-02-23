@@ -1,7 +1,7 @@
-import Sidebar from './components/Sidebar.jsx';
-import Searchbar from './components/Searchbar.jsx';
-import TopPlay from './components/TopPlay';
+import { useSelector } from 'react-redux';
+
 import { Route, Routes } from 'react-router-dom';
+
 import Discover from './pages/Discover.jsx';
 import TopArtists from './pages/TopArtists';
 import TopCharts from './pages/TopCharts';
@@ -9,10 +9,16 @@ import AroundYou from './pages/AroundYou'
 import ArtistDetails from './pages/ArtistDetails';
 import SongDetails from './pages/SongDetails';
 import Search from './pages/Search';
-import { useSelector } from 'react-redux';
+
+import Sidebar from './components/Sidebar.jsx';
+import Searchbar from './components/Searchbar.jsx';
+import TopPlay from './components/TopPlay';
+import MusicPlayerBar from './components/MusicPlayerBar/MusicPlayerBar';
+
+
 
 const App = () => {
-	const activeSong = useSelector((state) => state.player.activeSong);
+	const {activeSong} = useSelector((state) => state.player);
 	return (
 		<div className="relative flex">
 			<Sidebar/>
@@ -35,10 +41,9 @@ const App = () => {
 					</div>
 				</div>
 			</div>
-			{activeSong?.title && (
-				<div className="absolute h-28 bottom-0 left-0 right-0 flex 
-					bg-gradient-to-br from-white/10 to-[#2a2a80] backdrop-blur-lg rounded-t-3xl z-10">
-					MusicPlayerComponent
+			{activeSong?.track?.name && (
+				<div className="absolute h-28 bottom-0 left-0 right-0 flex animate-slideup bg-gradient-to-br from-white/10 to-[#2a2a80] backdrop-blur-lg rounded-t-3xl z-10">
+					<MusicPlayerBar/>
 				</div>
 			)}
 		</div>

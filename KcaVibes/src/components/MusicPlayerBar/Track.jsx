@@ -1,7 +1,6 @@
 import {useSelector} from 'react-redux';
 
-const Track = ({isSongPlaying, isSongActive}) => {
-    const {activeSong} = useSelector((state) => state.player);
+const Track = ({isSongPlaying, isSongActive, activeSong}) => {
 
     return (
         <div className="flex-1 flex items-center justify-start">
