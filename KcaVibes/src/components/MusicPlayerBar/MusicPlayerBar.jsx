@@ -3,10 +3,15 @@ import {useSelector, useDispatch} from 'react-redux';
 import {playPause, prevSong, nextSong} from '../../redux/playerSlice';
 import Track from './Track';
 import Controls from './Controls';
+import SeekSongBar from './SeekSongBar';
 
 const MusicPlayerBar = () => {
 	const [repeat, setRepeat] = useState(false);
 	const [shuffle, setShuffle] = useState(false);
+	//seekTime is where you want to jump to in a song
+	const [seekTime, setSeekTime] = useState(0);
+	//appTime is where the song is at when singing
+	const [appTime, setAppTime] = useState(0);
 	console.log(shuffle);
 
 
@@ -63,6 +68,10 @@ const MusicPlayerBar = () => {
 					handleNextSong={handleNextSong} 
 					shuffle={shuffle} 
 					setShuffle={setShuffle}
+				/>
+				<SeekSongBar 
+					setSeekTime={setSeekTime} 
+					appTime={appTime}
 				/>
 			</div>
 		</div>
