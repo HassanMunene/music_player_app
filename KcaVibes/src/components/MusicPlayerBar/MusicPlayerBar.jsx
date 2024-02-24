@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {playPause, prevSong} from '../../redux/playerSlice';
+import {playPause, prevSong, nextSong} from '../../redux/playerSlice';
 import Track from './Track';
 import Controls from './Controls';
 
@@ -38,6 +38,15 @@ const MusicPlayerBar = () => {
 			dispatch(playPause(true));
 		}
 	}
+	const handleNextSong = () => {
+		//if not shuffle means you dont want the songs to shuffle to next you want to follow order
+		if (!shuffle) {
+			dispatch(nextSong((currentIndex + 1) % currentSongs.length));
+		} else {
+			// if you want to shuffle therefore
+			dispatch(nextSong(Math.floor(Math.random() * currentSongs.length)));
+		}
+	};
 
 	return (
 		<div className="relative px-8 sm:px-12 w-full flex items-center justify-between">
@@ -48,7 +57,9 @@ const MusicPlayerBar = () => {
 					setRepeat={setRepeat} 
 					currentSongs={currentSongs} 
 					handlePrevSong={handlePrevSong} 
-					isSongPlaying={isSongPlaying}
+					isSongPlaying={isSongPlaying} 
+					handlePlayingPausing={handlePlayingPausing} 
+					handleNextSong={handleNextSong}
 				/>
 			</div>
 		</div>
