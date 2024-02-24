@@ -7,6 +7,7 @@ import Controls from './Controls';
 const MusicPlayerBar = () => {
 	const [repeat, setRepeat] = useState(false);
 	const [shuffle, setShuffle] = useState(false);
+	console.log(shuffle);
 
 
 	const {activeSong, currentSongs, currentIndex, isSongActive, isSongPlaying} = useSelector((state) => state.player);
@@ -59,7 +60,9 @@ const MusicPlayerBar = () => {
 					handlePrevSong={handlePrevSong} 
 					isSongPlaying={isSongPlaying} 
 					handlePlayingPausing={handlePlayingPausing} 
-					handleNextSong={handleNextSong}
+					handleNextSong={handleNextSong} 
+					shuffle={shuffle} 
+					setShuffle={setShuffle}
 				/>
 			</div>
 		</div>
