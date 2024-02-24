@@ -22,7 +22,6 @@ const playerSlice = createSlice({
         setActiveSong: (state, action) => {
             state.activeSong = action.payload.song;
             state.currentSongs = action.payload.data.items;
-            console.log(state.currentSongs);
             state.currentIndex = action.payload.index;
             state.isSongActive = true;
         },
@@ -60,6 +59,7 @@ const playerSlice = createSlice({
             }
         },
         playPause: (state, action) => {
+            //toggle between playing and pausing song
             state.isSongPlaying = action.payload;
         },
         selectedGenreListId: (state, payload) => {

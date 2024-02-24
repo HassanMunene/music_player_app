@@ -27,6 +27,17 @@ const MusicPlayerBar = () => {
 			dispatch(prevSong(currentIndex - 1));
 		}
 	}
+	const handlePlayingPausing = () => {
+		//if song is not active then no need to bother
+		if (!isSongActive) return;
+
+		//if song is playing then pause it otherwise play it
+		if (isSongPlaying) {
+			dispatch(playPause(false));		
+		} else {
+			dispatch(playPause(true));
+		}
+	}
 
 	return (
 		<div className="relative px-8 sm:px-12 w-full flex items-center justify-between">
@@ -36,7 +47,8 @@ const MusicPlayerBar = () => {
 					repeat={repeat} 
 					setRepeat={setRepeat} 
 					currentSongs={currentSongs} 
-					handlePrevSong={handlePrevSong}
+					handlePrevSong={handlePrevSong} 
+					isSongPlaying={isSongPlaying}
 				/>
 			</div>
 		</div>
