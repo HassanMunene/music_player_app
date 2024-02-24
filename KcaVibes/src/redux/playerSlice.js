@@ -9,11 +9,11 @@ const initialState = {
     genreListId: '',
 };
 
-//activeSong is the song that is the object in the items. basically the whole thing
-//currentSongs are the songs that i have retrieved in my case they are the array items
-//currentIndex, items are array therefore the songs inside are indexed. Hence what index im I in
-//setActiveSong that is set the song that is active currently
-//playPause is toggle btn true and false depending on whether the song is playing or not
+// activeSong is the song that is the object in the items. basically the whole thing
+// currentSongs are the songs that i have retrieved in my case they are the array items
+// currentIndex, items are array therefore the songs inside are indexed. Hence what index im I in
+// setActiveSong that is set the song that is active currently
+// playPause is toggle btn true and false depending on whether the song is playing or not
 
 const playerSlice = createSlice({
     name: 'player',
@@ -22,6 +22,7 @@ const playerSlice = createSlice({
         setActiveSong: (state, action) => {
             state.activeSong = action.payload.song;
             state.currentSongs = action.payload.data.items;
+            console.log(state.currentSongs);
             state.currentIndex = action.payload.index;
             state.isSongActive = true;
         },
@@ -39,7 +40,7 @@ const playerSlice = createSlice({
             const prevIndex = action.payload;
 
             // check if prevIndex is within the bouds of the array
-            if (prevIndex >= 0 {
+            if (prevIndex >= 0) {
                 // get previous song data
                 const prevSongData = state.currentSongs[prevIndex]?.track || state.currentSongs[prevIndex];
                 // now update the redux states with our new song

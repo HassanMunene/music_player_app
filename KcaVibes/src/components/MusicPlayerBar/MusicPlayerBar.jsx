@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {playPause} from '../../redux/playerSlice';
+import {playPause, prevSong} from '../../redux/playerSlice';
 import Track from './Track';
 import Controls from './Controls';
 
@@ -32,7 +32,12 @@ const MusicPlayerBar = () => {
 		<div className="relative px-8 sm:px-12 w-full flex items-center justify-between">
 			<Track isSongPlaying={isSongPlaying} isSongActive={isSongActive} activeSong={activeSong}/>
 			<div className="flex-1 flex flex-col items-center justify-center">
-				<Controls repeat={repeat} setRepeat={setRepeat} currentSongs={currentSongs}/>
+				<Controls 
+					repeat={repeat} 
+					setRepeat={setRepeat} 
+					currentSongs={currentSongs} 
+					handlePrevSong={handlePrevSong}
+				/>
 			</div>
 		</div>
 	)
