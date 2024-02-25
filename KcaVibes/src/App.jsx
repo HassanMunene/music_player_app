@@ -19,6 +19,7 @@ import MusicPlayerBar from './components/MusicPlayerBar/MusicPlayerBar';
 
 const App = () => {
 	const {activeSong} = useSelector((state) => state.player);
+	console.log(activeSong?.track?.name);
 	return (
 		<div className="relative flex">
 			<Sidebar/>

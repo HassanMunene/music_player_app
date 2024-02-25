@@ -27,7 +27,7 @@ const playerSlice = createSlice({
         },
         nextSong: (state, action) => {
             const nextIndex = action.payload;
-            const nextSongData = state.currentSongs[nextSong]?.track || state.currentSongs[nextIndex];
+            const nextSongData = state.currentSongs[nextIndex];
             state.activeSong = nextSongData;
             state.currentIndex = nextIndex;
             state.isSongActive = true;
@@ -35,26 +35,12 @@ const playerSlice = createSlice({
         prevSong: (state, action) => {
             //get the previous index
             const prevIndex = action.payload;
-
-            // check if prevIndex is within the bouds of the array
-            if (prevIndex >= 0) {
-                // get previous song data
-                const prevSongData = state.currentSongs[prevIndex]?.track || state.currentSongs[prevIndex];
-                // now update the redux states with our new song
-                state.activeSong = prevSongData;
-                state.currentIndex = prevIndex;
-                state.isSongActive = true;
-            } else {
-                // if the prev song is less than 0 wrap around to the last song
-                const lastIndex = state.currentSongs.length - 1;
-                //get the last song data
-                const lastSongData = state.currentSongs[lastIndex]?.track || state.currentSongs[lastIndex];
-
-                //update redux state
-                state.activeSong = lastSongData;
-                state.currentIndex = lastIndex;
-                state.isSongActive = true;
-            }
+            // get previous song data
+            const prevSongData = state.currentSongs[prevIndex];
+            // now update the redux states with our new song
+            state.activeSong = prevSongData;
+            state.currentIndex = prevIndex;
+            state.isSongActive = true;
         },
         playPause: (state, action) => {
             //toggle between playing and pausing song
