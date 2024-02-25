@@ -14,7 +14,7 @@ const PlaySong = ({activeSong, isSongPlaying, repeat, volume, seekTime, onSongEn
         if (ref.current && activeSong.track.preview_url) {
             if(isSongPlaying) {
                 ref.current.play()
-                .then(() => console.log('playback started'))
+                .then(() => console.log('song is playing'))
                 .catch((error) => console.log('playback failed:', error));
             } else {
                 ref.current.pause();

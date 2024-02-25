@@ -11,14 +11,16 @@ const SongCard = ({song, isSongPlaying, activeSong, data, index}) => {
     dispatch(setActiveSong({song, data, index}));
     dispatch(playPause(true));
   };
-  const handlePauseClick = () => {};
+  const handlePauseClick = () => {
+    dispatch(playPause(false));
+  };
 
   return (
     <div 
       className="w-[250px] p-4 bg-white/5 flex flex-col bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer">
       <div className="w-full relative h-56 group">
         <div 
-          className={`absolute inset-0 justify-center items-center bg-black bg-opacity-50 group-hover:flex ${activeSong?.name === song.track.name ? 'flex bg-black bg-opacity-70' : 'hidden'}`}>
+          className={`absolute inset-0 justify-center items-center bg-black bg-opacity-50 group-hover:flex ${activeSong?.track?.name === song.track.name ? 'flex bg-black bg-opacity-70' : 'hidden'}`}>
             <PlayPause 
               song={song} 
               handlePlay={handlePlayClick} 
