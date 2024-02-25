@@ -6,7 +6,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {Link} from 'react-router-dom';
 import dummyData from '../assets/dummyData2.js';
 import PlayPause from '../components/PlayPause';
-import {playPause} from '../redux/playerSlice';
+import {playPause, setActiveSong} from '../redux/playerSlice';
 
 
 
@@ -43,7 +43,8 @@ const TopPlay = () => {
 	const data = dummyData.items;
 	const topPlaysToDisplay = data.slice(0, 5);
 
-	const handlePlayClick = () => {
+	const handlePlayClick = (song, index) => {
+		dispatch(setActiveSong({song, data, index}))
 		dispatch(playPause(true));
 	}
 	const handlePauseClick = () => {
@@ -68,7 +69,9 @@ const TopPlay = () => {
 								activeSong={activeSong} 
 								song={song} 
 								index={index} 
-								isSongPlaying={isSongPlaying}
+								isSongPlaying={isSongPlaying} 
+								handlePlayClick={() => handlePlayClick(song, index)} 
+								handlePauseClick={handlePauseClick}
 							/>
 						)
 					})}

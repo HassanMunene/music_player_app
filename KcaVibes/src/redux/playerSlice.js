@@ -20,8 +20,9 @@ const playerSlice = createSlice({
     initialState,
     reducers: {
         setActiveSong: (state, action) => {
+            console.log(action.payload.song, action.payload.data, action.payload.index)
             state.activeSong = action.payload.song;
-            state.currentSongs = action.payload.data.items;
+            state.currentSongs = action?.payload?.data?.items || action?.payload?.data;
             state.currentIndex = action.payload.index;
             state.isSongActive = true;
         },
