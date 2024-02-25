@@ -14,7 +14,7 @@ const SeekSongBar = ({setSeekTime, appTime, value, min, max, onInput}) => {
                 max={max} 
                 step="any" 
                 onInput={onInput} 
-                className="w-24 md:w-56 2xl:w-96 h-1 mx-4 2xl:mx-6 rounded-lg"
+                className="w-24 md:w-56 2xl:w-96 h-1 mx-4 2xl:mx-6 rounded-lg cursor-pointer"
             />
             <p className="text-white">{max === 0 ? '0:00' : getTime(max)}</p>
             <button type="button" onClick={() => setSeekTime(appTime + 5)} className="hidden sm:block ml-4 text-white">+</button>

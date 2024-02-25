@@ -5,6 +5,7 @@ import Track from './Track';
 import Controls from './Controls';
 import SeekSongBar from './SeekSongBar';
 import PlaySong from './PlaySong';
+import VolumeBar from './VolumeBar';
 
 const MusicPlayerBar = () => {
 	const [repeat, setRepeat] = useState(false);
@@ -15,7 +16,7 @@ const MusicPlayerBar = () => {
 	const [appTime, setAppTime] = useState(0);
 	//durationOfSong is how long does the song last
 	const [durationOfSong, setDurationOfSong] = useState(0);
-	const [volume, setVolume] = useState(0.3);
+	const [volume, setVolume] = useState(0.6);
 
 
 	const {activeSong, currentSongs, currentIndex, isSongActive, isSongPlaying} = useSelector((state) => state.player);
@@ -91,6 +92,10 @@ const MusicPlayerBar = () => {
 					onTimeUpdate={(event) => setAppTime(event.target.currentTime)}
 				/>
 			</div>
+			<VolumeBar 
+				volumeValue={volume} 
+				setVolume={setVolume}
+			/>
 		</div>
 	)
 }
