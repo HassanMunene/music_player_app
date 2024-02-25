@@ -4,6 +4,7 @@ import {playPause, prevSong, nextSong} from '../../redux/playerSlice';
 import Track from './Track';
 import Controls from './Controls';
 import SeekSongBar from './SeekSongBar';
+import PlaySong from './PlaySong';
 
 const MusicPlayerBar = () => {
 	const [repeat, setRepeat] = useState(false);
@@ -12,7 +13,8 @@ const MusicPlayerBar = () => {
 	const [seekTime, setSeekTime] = useState(0);
 	//appTime is where the song is at when singing
 	const [appTime, setAppTime] = useState(0);
-	console.log(shuffle);
+	//durationOfSong is how long does the song last
+	const [durationOfSong, setDurationOfSong] = useState(0);
 
 
 	const {activeSong, currentSongs, currentIndex, isSongActive, isSongPlaying} = useSelector((state) => state.player);
@@ -71,7 +73,16 @@ const MusicPlayerBar = () => {
 				/>
 				<SeekSongBar 
 					setSeekTime={setSeekTime} 
-					appTime={appTime}
+					appTime={appTime} 
+					value={appTime} 
+					min="0" 
+					max={durationOfSong}
+					onInput={(event) => setSeekTime(event.target.value)}
+				/>
+				<PlaySong 
+					activeSong={activeSong} 
+					isSongPlaying={isSongPlaying} 
+					repeat={repeat}
 				/>
 			</div>
 		</div>
