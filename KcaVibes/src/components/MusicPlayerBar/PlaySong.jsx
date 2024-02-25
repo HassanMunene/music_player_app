@@ -1,6 +1,6 @@
 import {useRef, useEffect} from 'react';
 
-const PlaySong = ({activeSong, isSongPlaying, repeat}) => {
+const PlaySong = ({activeSong, isSongPlaying, repeat, volume, seekTime, onSongEnded, onLoadedData, onTimeUpdate}) => {
     // create a reference to a DOM element but initially it will be null before component
     // has been mounted
     const ref = useRef(null);
@@ -21,12 +21,25 @@ const PlaySong = ({activeSong, isSongPlaying, repeat}) => {
                 console.log('playback paused');
             }
         }
-    }, [activeSong, isSongPlaying])
+    }, [activeSong, isSongPlaying]);
+
+    // this useEffect will come into effect when the volume state changed
+    useEffect(() => {
+        ref.current.volume = volume;
+    }, [volume]);
+
+    // this useEffect will work when user decides to move song to a different time using seeTimeBar
+    useEffect(() => {
+        ref.current.currentTime = seekTime;
+    }, [seekTime]);
     return (
         <audio
             src={activeSong?.track?.preview_url}
             ref={ref} 
             loop={repeat}
+            onEnded={onSongEnded} 
+            onLoadedData={onLoadedData} 
+            onTimeUpdate={onTimeUpdate}
         />
     )
 }

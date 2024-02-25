@@ -15,6 +15,7 @@ const MusicPlayerBar = () => {
 	const [appTime, setAppTime] = useState(0);
 	//durationOfSong is how long does the song last
 	const [durationOfSong, setDurationOfSong] = useState(0);
+	const [volume, setVolume] = useState(0.3);
 
 
 	const {activeSong, currentSongs, currentIndex, isSongActive, isSongPlaying} = useSelector((state) => state.player);
@@ -82,7 +83,12 @@ const MusicPlayerBar = () => {
 				<PlaySong 
 					activeSong={activeSong} 
 					isSongPlaying={isSongPlaying} 
-					repeat={repeat}
+					repeat={repeat} 
+					volume={volume} 
+					seekTime={seekTime} 
+					onSongEnded={handleNextSong} 
+					onLoadedData={(event) => setDurationOfSong(event.target.duration)} 
+					onTimeUpdate={(event) => setAppTime(event.target.currentTime)}
 				/>
 			</div>
 		</div>
