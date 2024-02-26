@@ -15,6 +15,7 @@ import Searchbar from './components/Searchbar.jsx';
 import TopPlay from './components/TopPlay';
 import MusicPlayerBar from './components/MusicPlayerBar/MusicPlayerBar';
 
+// bg-gradient-to-br from-black to-[#121286]
 
 
 const App = () => {
@@ -22,9 +23,9 @@ const App = () => {
 	return (
 		<div className="relative flex">
 			<Sidebar/>
-			<div className="flex-1 flex flex-col bg-gradient-to-br from-black to-[#121286]">
+			<div className="flex-1 flex flex-col">
 				<Searchbar />
-				<div className="px-6 h-auto overflow-y-scroll hide-scrollbar flex flex-col-reverse md:flex-row">
+				<div className="px-6 h-auto md:h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex flex-col-reverse lg:flex-row">
 					<div className="flex-1 h-auto pb-40">
 						<Routes>
 							<Route path="/" element={<Discover/>}/>
@@ -41,11 +42,11 @@ const App = () => {
 					</div>
 				</div>
 			</div>
-			{activeSong?.track?.name && (
+{/*			{activeSong?.track?.name && (
 				<div className="absolute h-28 bottom-0 left-0 right-0 flex animate-slideup bg-gradient-to-br from-white/10 to-[#2a2a80] backdrop-blur-lg rounded-t-3xl z-10">
 					<MusicPlayerBar/>
 				</div>
-			)}
+			)}*/}
 		</div>
 	)
 }
