@@ -11,7 +11,7 @@ const PlaySong = ({activeSong, isSongPlaying, repeat, volume, seekTime, onSongEn
     //check if ref.current is pointing to a valid DOM element
     // if it is valid, we will check the isSongPlaying state to determine what to do
     useEffect(() => {
-        if (ref.current && activeSong.track.preview_url) {
+        if (ref.current && activeSong?.track?.preview_url) {
             if(isSongPlaying) {
                 ref.current.play()
                 .then(() => console.log('song is playing'))
