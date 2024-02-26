@@ -71,7 +71,8 @@ const MusicPlayerBar = () => {
 					handlePlayingPausing={handlePlayingPausing} 
 					handleNextSong={handleNextSong} 
 					shuffle={shuffle} 
-					setShuffle={setShuffle}
+					setShuffle={setShuffle} 
+					activeSong={activeSong}
 				/>
 				<SeekSongBar 
 					setSeekTime={setSeekTime} 
@@ -79,7 +80,8 @@ const MusicPlayerBar = () => {
 					value={appTime} 
 					min="0" 
 					max={durationOfSong}
-					onInput={(event) => setSeekTime(event.target.value)}
+					onInput={(event) => setSeekTime(event.target.value)} 
+					activeSong={activeSong}
 				/>
 				<PlaySong 
 					activeSong={activeSong} 

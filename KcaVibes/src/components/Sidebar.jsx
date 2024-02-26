@@ -31,7 +31,7 @@ const NavLinks = () => {
 
 const Sidebar = () => {
   return(
-    <div className="hidden md:flex flex-col w-[240px] py-10 px-4 bg-[#191624] border border-[#0e0d18] rounded-lg">
+    <div className="hidden md:h-[87vh] md:flex flex-col w-[240px] py-10 px-4 bg-[#191624] border border-[#0e0d18] rounded-lg">
       <h1 className="text-2xl font-bold text-white">Kca<span className="text-[#ffff00]">Vibes</span></h1>
       <NavLinks/>
     </div>
