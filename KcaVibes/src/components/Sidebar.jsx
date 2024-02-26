@@ -1,6 +1,6 @@
 const Sidebar = () => {
   return(
-    <div className="hidden">Sidebar</div>
+    <div className="hidden md:flex">Sidebar</div>
   )
 };
 

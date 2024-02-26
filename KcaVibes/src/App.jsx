@@ -24,8 +24,8 @@ const App = () => {
 			<Sidebar/>
 			<div className="flex-1 flex flex-col bg-gradient-to-br from-black to-[#121286]">
 				<Searchbar />
-				<div className="px-6 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex flex-col-reverse md:flex-row">
-					<div className="flex-1 h-fit pb-40">
+				<div className="px-6 h-auto overflow-y-scroll hide-scrollbar flex flex-col-reverse md:flex-row">
+					<div className="flex-1 h-auto pb-40">
 						<Routes>
 							<Route path="/" element={<Discover/>}/>
 							<Route path="/top-artists" element={<TopArtists/>}/>
@@ -36,7 +36,7 @@ const App = () => {
 							<Route path="/search/:searchTerm" element={<Search />} />
 						</Routes>
 					</div>	
-					<div className="lg:sticky relative top-0 h-fit">
+					<div className="lg:sticky relative top-0 h-auto overflow-y-scroll">
 						<TopPlay />
 					</div>
 				</div>

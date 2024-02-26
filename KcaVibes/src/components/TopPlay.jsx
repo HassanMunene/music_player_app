@@ -41,7 +41,7 @@ const TopPlay = () => {
 	const dispatch = useDispatch();
 	const {activeSong, isSongPlaying} = useSelector((state) => state.player);
 	const data = dummyData.items;
-	const topPlaysToDisplay = data.slice(0, 5);
+	const topPlaysToDisplay = data.slice(0, 9);
 
 	const handlePlayClick = (song, index) => {
 		dispatch(setActiveSong({song, data, index}))
@@ -77,6 +77,7 @@ const TopPlay = () => {
 					})}
 				</div>
 			</div>
+
 		</div>
 	)
 }
