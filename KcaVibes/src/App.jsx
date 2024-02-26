@@ -21,7 +21,7 @@ import MusicPlayerBar from './components/MusicPlayerBar/MusicPlayerBar';
 const App = () => {
 	const {activeSong} = useSelector((state) => state.player);
 	return (
-		<div className="p-2">
+		<div className="md:p-2">
 			<Sidebar/>
 		</div>
 
