@@ -41,7 +41,7 @@ const TopPlay = () => {
 	const dispatch = useDispatch();
 	const {activeSong, isSongPlaying} = useSelector((state) => state.player);
 	const data = dummyData.items;
-	const topPlaysToDisplay = data.slice(0, 9);
+	const topPlaysToDisplay = data.slice(0, 5);
 
 	const handlePlayClick = (song, index) => {
 		dispatch(setActiveSong({song, data, index}))
@@ -52,7 +52,7 @@ const TopPlay = () => {
 	}
 
 	return (
-		<div className="ml-0 xl:ml-6 mb-0 xl:mb-6 flex-1 max-w-full xl:max-w-[500px] flex flex-col">
+		<div className="ml-0 mb-0 xl:mb-6 flex-1 max-w-full xl:max-w-[500px] flex flex-col">
 			<div className="w-full flex flex-col">
 				<div className="flex flex-row justify-between items-center">
 					<h2 className="text-white font-bold text-2xl">Top Hits Kenya</h2>
