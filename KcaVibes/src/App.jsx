@@ -42,38 +42,10 @@ const App = () => {
 					</div>
 		 		</div>
 			</div>
-			<div className="absolute bottom-0 left-0 right-0 z-10 bg-[#0D0D0D]">
+			<div className="absolute bottom-0 left-0 right-0 z-10 bg-[#0D0D0D] h-[100px] flex items-center mx-2 rounded-lg">
 				<MusicPlayerBar/>
 			</div>
 		</div>
-
-		// <div className="relative">
-		// 	<div className="relative flex gap-2 md:h-[89vh] flex-col-reverse lg:flex-row">
-		// 		<Sidebar/>
-		// 		<div className="flex-1 flex flex-col bg-gradient-to-br from-black to-[#121286]">
-		// 			<Searchbar />
-		// 			<div className="px-6 h-auto  overflow-y-scroll hide-scrollbar flex">
-		// 				<div className="flex-1 h-auto pb-40">
-		// 					<Routes>
-		// 						<Route path="/" element={<Discover/>}/>
-		// 						<Route path="/top-artists" element={<TopArtists/>}/>
-		// 						<Route path="/top-charts" element={<TopCharts/>}/>
-		// 						<Route path="/around-you" element={<AroundYou />} />
-		// 						<Route path="/artists/:id" element={<ArtistDetails />} />
-		// 						<Route path="/songs/:songid" element={<SongDetails />} />
-		// 						<Route path="/search/:searchTerm" element={<Search />} />
-		// 					</Routes>
-		// 				</div>	
-		// 			</div>
-		// 		</div>
-		// 		<div className="lg:sticky relative top-0 h-auto overflow-y-scroll">
-		// 			<TopPlay />
-		// 		</div>
-		// 	</div>
-		// 	<div className="absolute bottom-0 left-0 right-0 z-10 bg-[#0D0D0D]">
-		// 		<MusicPlayerBar/>
-		// 	</div>
-		// </div>
 	)
 }
 export default App;
