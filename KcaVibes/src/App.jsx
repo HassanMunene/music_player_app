@@ -37,10 +37,13 @@ const App = () => {
 		 					<Route path="/search/:searchTerm" element={<Search />} />
 						</Routes>
 					</div>
-					<div>
+					<div className="lg:sticky relative top-0 h-fit">
 						<TopPlay />
 					</div>
 		 		</div>
+			</div>
+			<div className="absolute bottom-0 left-0 right-0 z-10 bg-[#0D0D0D]">
+				<MusicPlayerBar/>
 			</div>
 		</div>
 

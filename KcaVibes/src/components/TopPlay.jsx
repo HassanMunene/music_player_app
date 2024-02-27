@@ -52,12 +52,12 @@ const TopPlay = () => {
 	}
 
 	return (
-		<div className="ml-1 mb-0 xl:mb-6 flex-1 max-w-full xl:max-w-[500px] flex flex-col bg-black rounded-lg">
+		<div className="ml-1 mb-0 xl:mb-6 flex-1 max-w-full xl:max-w-[500px] flex flex-col rounded-lg">
 			<div className="w-full flex flex-col">
 				<div className="flex flex-row justify-between items-center">
-					<h2 className="text-white font-bold text-2xl">Top Hits Kenya</h2>
-					<Link to="/top-charts">
-						<p className="text-gray-300 cursor-pointer">See more</p>
+					<h2 className="text-black font-bold text-2xl">Top Hits Kenya</h2>
+					<Link to="/top-charts" className="bg-primary btn hover:bg-accent1">
+						<p className="text-white cursor-pointer">See more</p>
 					</Link>
 				</div>
 

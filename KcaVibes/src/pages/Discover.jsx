@@ -21,10 +21,10 @@ const Discover = () => {
 	//if (error) return <Error/>
 	return (
 		<div className="flex flex-col">
-			<div className="w-full mb-1 p-3 bg-black rounded-lg">
-				<h2 className="font-bold text-3xl text-white text-left">Discover</h2>
+			<div className="w-full mb-1 p-3 rounded-lg">
+				<h2 className="font-bold text-3xl text-black text-left">Discover</h2>
 			</div>
-			<div className="flex flex-col sm:flex-row items-center sm:flex-wrap gap-3 sm:justify-start bg-black rounded-lg">
+			<div className="flex flex-row items-center justify-start flex-wrap gap-3 sm:gap-5 sm:justify-start rounded-lg">
 				{data?.map((song, index) => (
 					<SongCard 
 						key={song.track.id} 
