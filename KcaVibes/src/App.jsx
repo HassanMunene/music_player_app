@@ -21,12 +21,12 @@ import MusicPlayerBar from './components/MusicPlayerBar/MusicPlayerBar';
 const App = () => {
 	const {activeSong} = useSelector((state) => state.player);
 	return (
-		<div className="md:p-2 flex">
+		<div className="relative md:p-2 flex bg-background">
 			<Sidebar/>
-			<div>
+			<div className="flex-1 flex flex-col">
 				<Searchbar/>
-				<div>
-					<div className="flex flex-col-reverse">
+				<div className="px-6 sm:px-1 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex flex-col-reverse lg:flex-row">
+					<div className="dashboardSection flex-1 h-fit pb-40 rounded-lg">
 						<Routes>
 							<Route path="/" element={<Discover/>}/>
 		 					<Route path="/top-artists" element={<TopArtists/>}/>
@@ -36,11 +36,10 @@ const App = () => {
 							<Route path="/songs/:songid" element={<SongDetails />} />
 		 					<Route path="/search/:searchTerm" element={<Search />} />
 						</Routes>
-						<div className="lg:sticky relative top-0 h-auto overflow-y-scroll">
-							<TopPlay />
-						</div>
-		 			</div>
-
+					</div>
+					<div>
+						<TopPlay />
+					</div>
 		 		</div>
 			</div>
 		</div>

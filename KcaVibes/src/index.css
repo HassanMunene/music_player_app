@@ -2,10 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary-color: #283593; /* Deep Blue */
+  --accent-color-1: #FFA000; /* Vibrant Orange */
+  --accent-color-2: #9E9E9E; /* Light Gray */
+  --highlight-color: #4CAF50; /* Neon Green */
+  --background-color: #FAFAFA; /* Off-White */
+}
+
+/* Define dark theme if needed */
+
+
 body {
-  background-color: #0D0D0D;
   min-height: 100vh;
 }
+
+
+.dashboardSection {
+  background: var(--accent-300);
+}
+
 
 input[type=range] {
   -webkit-appearance: none;

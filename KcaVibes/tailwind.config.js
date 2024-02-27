@@ -6,9 +6,6 @@ export default {
   ],
   theme: {
     extend: {
-      color: {
-        black: '#191624',
-      },
       animation: {
         slideup: 'slideup 1s ease-in-out',
         slidedown: 'slidedown 1s ease-in-out',
@@ -43,6 +40,13 @@ export default {
           '50%': { transform: 'scale(1)' },
           '100%': { transform: 'scale(0)' },
         },
+      },
+      colors: {
+        primary: '#283593', // Deep Blue
+        accent1: '#FFA000', // Vibrant Orange
+        accent2: '#9E9E9E', // Light Gray
+        highlight: '#4CAF50', // Neon Green
+        background: '#FAFAFA', // Off-White
       },
     },
   },
