@@ -47,6 +47,7 @@ export default {
         accent2: '#9E9E9E', // Light Gray
         highlight: '#4CAF50', // Neon Green
         background: '#FAFAFA', // Off-White
+        background2: '#f0eded'
       },
     },
   },

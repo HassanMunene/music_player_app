@@ -37,17 +37,17 @@ const Sidebar = () => {
 
   return(
     <>
-      <div className="hidden md:flex flex-col w-[240px] py-10 px-4 rounded-lg">
-        <h1 className="text-2xl font-bold text-primary">Kca<span className="text-primary">Vibes</span></h1>
+      <div className="hidden md:flex flex-col w-[240px] py-10 px-4 rounded-lg bg-primary">
+        <h1 className="text-2xl font-bold text-background">Kca<span className="text-background">Vibes</span></h1>
         <NavLinks/>
       </div>
 
       {/*mobile sidebar burgers*/}
       <div className="absolute md:hidden block top-6 right-3">
         {!mobileMenuOpen ? (
-          <HiOutlineMenu className="w-6 h-6 text-white mr-2 cursor-pointer text-primary" onClick={() => setMobileMenuOpen(true)}/>
+          <HiOutlineMenu color="#283593" className="w-6 h-6 text-white mr-2 cursor-pointer" onClick={() => setMobileMenuOpen(true)}/>
         ): (
-          <RiCloseLine className="w-6 h-6 text-white mr-2 cursor-pointer text-primary" onClick={() => setMobileMenuOpen(false)}/>
+          <RiCloseLine color="#283593" className="w-6 h-6 text-white mr-2 cursor-pointer" onClick={() => setMobileMenuOpen(false)}/>
         )}
       </div>
 

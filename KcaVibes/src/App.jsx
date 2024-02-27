@@ -25,8 +25,8 @@ const App = () => {
 			<Sidebar/>
 			<div className="flex-1 flex flex-col">
 				<Searchbar/>
-				<div className="px-6 sm:px-1 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex flex-col-reverse lg:flex-row">
-					<div className="dashboardSection flex-1 h-fit pb-40 rounded-lg">
+				<div className="sm:pl-2 h-[calc(100vh-72px)] overflow-y-scroll hide-scrollbar flex flex-col-reverse lg:flex-row">
+					<div className="bg-background2 flex-1 h-fit pb-40 rounded-lg">
 						<Routes>
 							<Route path="/" element={<Discover/>}/>
 		 					<Route path="/top-artists" element={<TopArtists/>}/>

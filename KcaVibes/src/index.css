@@ -8,6 +8,7 @@
   --accent-color-2: #9E9E9E; /* Light Gray */
   --highlight-color: #4CAF50; /* Neon Green */
   --background-color: #FAFAFA; /* Off-White */
+  --background-color2: #a1a4f7;
 }
 
 /* Define dark theme if needed */
@@ -17,11 +18,12 @@ body {
   min-height: 100vh;
 }
 
-
-.dashboardSection {
-  background: var(--accent-300);
+.active {
+  background-color: var(--background-color);
+  padding: .5rem;
+  color: var(--primary-color);
+  border-radius: .5rem;
 }
-
 
 input[type=range] {
   -webkit-appearance: none;
