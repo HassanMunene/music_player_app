@@ -20,11 +20,11 @@ const Discover = () => {
 	//if (isFetching) return <Loader title="Loading songs..." />
 	//if (error) return <Error/>
 	return (
-		<div className="DiscoverPage flex flex-col">
-			<div className="w-full mt-4 mb-10">
+		<div className="flex flex-col">
+			<div className="w-full mb-1 p-3 bg-black rounded-lg">
 				<h2 className="font-bold text-3xl text-white text-left">Discover</h2>
 			</div>
-			<div className="flex flex-col sm:flex-row items-center sm:flex-wrap gap-8 sm:justify-start">
+			<div className="flex flex-col sm:flex-row items-center sm:flex-wrap gap-3 sm:justify-start bg-black rounded-lg">
 				{data?.map((song, index) => (
 					<SongCard 
 						key={song.track.id} 

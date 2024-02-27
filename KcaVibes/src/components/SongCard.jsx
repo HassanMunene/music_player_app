@@ -16,9 +16,8 @@ const SongCard = ({song, isSongPlaying, activeSong, data, index}) => {
   };
 
   return (
-    <div 
-      className="w-[250px] p-4 bg-white/5 flex flex-col bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer">
-      <div className="w-full relative h-56 group">
+    <div className="w-[200px] p-4 bg-accent1 flex flex-col bg-opacity-80 backdrop-blur-sm animate-slideup rounded-lg cursor-pointer">
+      <div className="w-full relative h-auto group">
         <div 
           className={`absolute inset-0 justify-center items-center bg-black bg-opacity-50 group-hover:flex ${activeSong?.track?.name === song.track.name ? 'flex bg-black bg-opacity-70' : 'hidden'}`}>
             <PlayPause 
