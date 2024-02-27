@@ -12,7 +12,7 @@ import {playPause, setActiveSong} from '../redux/playerSlice';
 
 const TopPlayCard = ({activeSong, song, index, isSongPlaying, handlePlayClick, handlePauseClick}) => {
 	return (
-		<div className={`w-full flex items-center hover:bg-[#4c426e] ${activeSong?.track?.name === song?.track?.name ? 'bg-[#4c426e]' : 'bg-transparent'} py-2 p-4 rounded-lg cursor-pointer mb-2`}>
+		<div className={`w-full flex items-center hover:bg-highlight ${activeSong?.track?.name === song?.track?.name ? 'bg-[#4c426e]' : 'bg-transparent'} py-2 p-4 cursor-pointer mb-2`}>
 			<h3 className="font-bold text-white mr-3">{index + 1}</h3>
 			<div className="flex-1 flex flex-row justify-between items-center">
 				<img src={song?.track?.album?.images[0].url} className="w-20 h-20 rounded-lg" alt={song?.track?.name}/>
@@ -52,12 +52,12 @@ const TopPlay = () => {
 	}
 
 	return (
-		<div className="ml-1 mb-0 xl:mb-6 flex-1 max-w-full xl:max-w-[500px] flex flex-col rounded-lg bg-primary">
+		<div className="sm:ml-1 mb-0 xl:mb-6 flex-1 max-w-full xl:max-w-[500px] flex flex-col md:rounded-lg bg-primary">
 			<div className="w-full flex flex-col">
-				<div className="flex flex-row justify-between items-center">
-					<h2 className="text-black font-bold text-2xl">Top Hits Kenya</h2>
-					<Link to="/top-charts" className="bg-primary btn hover:bg-accent1">
-						<p className="text-white cursor-pointer">See more</p>
+				<div className="flex flex-row justify-between items-center p-4">
+					<h2 className="text-white font-bold text-2xl">Top Hits Kenya</h2>
+					<Link to="/top-charts" className="bg-primary btn bg-accent1">
+						<p className="text-black cursor-pointer">See more</p>
 					</Link>
 				</div>
 

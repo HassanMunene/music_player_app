@@ -42,7 +42,7 @@ const App = () => {
 					</div>
 		 		</div>
 			</div>
-			<div className="absolute bottom-0 left-0 right-0 z-10 bg-[#0D0D0D] h-[100px] flex items-center mx-2 rounded-lg">
+			<div className="absolute bottom-0 left-0 right-0 z-10 bg-[#0D0D0D] h-[100px] flex items-center sm:mx-2 rounded-lg">
 				<MusicPlayerBar/>
 			</div>
 		</div>
