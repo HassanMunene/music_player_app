@@ -52,7 +52,7 @@ const TopPlay = () => {
 	}
 
 	return (
-		<div className="sm:ml-1 mb-0 xl:mb-6 flex-1 max-w-full xl:max-w-[500px] flex flex-col md:rounded-lg bg-primary">
+		<div className="sm:ml-1 mb-0 xl:mb-6 flex-1 max-w-full xl:max-w-[500px] flex flex-col md:rounded-lg">
 			<div className="w-full flex flex-col">
 				<div className="flex flex-row justify-between items-center p-4">
 					<h2 className="text-white font-bold text-2xl">Top Hits Kenya</h2>

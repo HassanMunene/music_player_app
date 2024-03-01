@@ -1,6 +1,6 @@
 import fs from 'fs';
 
-fs.readFile('./dummyData.json', 'utf-8', (err, data) => {
+fs.readFile('./searchData.json', 'utf-8', (err, data) => {
     if (err) {
         console.error('Error reading the file:', err);
         return;
@@ -11,7 +11,7 @@ fs.readFile('./dummyData.json', 'utf-8', (err, data) => {
         // Convert JavaScript object to string before writing to file
         const jsonString = `const jsonObject = ${JSON.stringify(jsonObj, null, 2)};`;
 
-        fs.writeFile('dummyData2.js', jsonString, (err) => {
+        fs.writeFile('searchData.js', jsonString, (err) => {
             if (err) {
                 console.error('Error writing file:', err);
                 return;

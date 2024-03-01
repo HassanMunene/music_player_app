@@ -37,7 +37,7 @@ const Sidebar = () => {
 
   return(
     <>
-      <div className="hidden md:flex flex-col w-[240px] py-10 px-4 rounded-lg bg-primary">
+      <div className="hidden md:flex flex-col w-[360px] py-10 px-4 rounded-lg bg-background2 min-h-0 md:h-[88%]">
         <h1 className="text-2xl font-bold text-background">Kca<span className="text-background">Vibes</span></h1>
         <NavLinks/>
       </div>
