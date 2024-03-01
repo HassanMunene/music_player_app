@@ -19,23 +19,11 @@ const Discover = () => {
 	//if (isFetching) return <Loader title="Loading songs..." />
 	//if (error) return <Error/>
 	return (
-		<div className="flex flex-col">
+		<div className="flex flex-col min-h-0 max-w-full">
 			<div className="w-full mb-1 p-2 rounded-lg hidden sm:block">
 				<h2 className="font-bold text-3xl text-white text-left">Discover</h2>
 			</div>
-			<div className="flex flex-row items-center justify-start flex-wrap gap-3 sm:gap-5 sm:justify-start rounded-lg">
-{/*				{data?.map((song, index) => (
-					{index === 0 ? (
-						<SongCard 
-							key={song.track.id} 
-							song={song} 
-							isSongPlaying={isSongPlaying} 
-							activeSong={activeSong}
-							data={dummyData} 
-							index={index}
-						/>
-					): ("")}
-				))}*/}
+			<div className="h-full">
 				<SongCard 
 					key={data[0]?.track?.id} 
 					song={data[0]} 
@@ -49,3 +37,16 @@ const Discover = () => {
 }
 
 export default Discover;
+
+{/*				{data?.map((song, index) => (
+					{index === 0 ? (
+						<SongCard 
+							key={song.track.id} 
+							song={song} 
+							isSongPlaying={isSongPlaying} 
+							activeSong={activeSong}
+							data={dummyData} 
+							index={index}
+						/>
+					): ("")}
+				))}*/}
