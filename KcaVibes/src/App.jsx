@@ -25,8 +25,8 @@ const App = () => {
 			<Sidebar/>
 			<div className="flex-1 flex flex-col bg-background2 rounded-lg h-[88%]">
 				<Searchbar/>
-				<div className="sm:pl-2 overflow-y-scroll hide-scrollbar flex flex-col lg:flex-row">
-					<div className="flex-1 h-fit pb-40 rounded-lg">
+				<div className="sm:pl-2 overflow-y-scroll hide-scrollbar flex flex-col lg:flex-row gap-[20px]">
+					<div className="flex-1 h-fit rounded-lg">
 						<Routes>
 							<Route path="/" element={<Discover/>}/>
 		 					<Route path="/top-artists" element={<TopArtists/>}/>
@@ -37,10 +37,11 @@ const App = () => {
 		 					<Route path="/search/:searchTerm" element={<Search />} />
 						</Routes>
 					</div>
-					<div className="lg:sticky relative top-0 h-fit">
+					<div className="lg:sticky relative top-0 h-fit flex-1">
 						<TopPlay />
 					</div>
 		 		</div>
+		 		<div>Artists section</div>
 			</div>
 			<div className="absolute bottom-0 left-0 right-0 z-10 bg-black h-[12%] flex items-center sm:mx-2 rounded-lg">
 				<MusicPlayerBar/>
