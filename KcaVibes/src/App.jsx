@@ -11,6 +11,7 @@ import SongDetails from './pages/SongDetails';
 import Search from './pages/Search';
 
 import Sidebar from './components/Sidebar.jsx';
+import ArtistCard from './components/ArtistCard.jsx';
 import Searchbar from './components/Searchbar.jsx';
 import TopPlay from './components/TopPlay';
 import MusicPlayerBar from './components/MusicPlayerBar/MusicPlayerBar';
@@ -41,7 +42,12 @@ const App = () => {
 						<TopPlay />
 					</div>
 		 		</div>
-		 		<div>Artists section</div>
+		 		<div className="w-full flex flex-wrap">
+		 			<ArtistCard/>
+		 			<ArtistCard/>
+		 			<ArtistCard/>
+		 			<ArtistCard/>
+		 		</div>
 			</div>
 			<div className="absolute bottom-0 left-0 right-0 z-10 bg-black h-[12%] flex items-center sm:mx-2 rounded-lg">
 				<MusicPlayerBar/>
